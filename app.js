@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.json({
-        message: 'Hello World CI CD1!',
+        message: 'Welcome to my first Github Action pipline',
         timestamp: new Date().toISOString(),
         environment: process.env.NODE_ENV || 'development'
     });
