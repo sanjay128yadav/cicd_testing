@@ -51,7 +51,3 @@ jobs:
           pm2 delete hello-world-app || true
           pm2 start app.js --name hello-world-app
           pm2 save
-          
-          # Setup PM2 to start on boot
-          pm2 startup systemd -u ec2-user --hp /home/ec2-user
-          sudo env PATH=$PATH:/home/ec2-user/.nvm/versions/node/v18.17.0/bin pm2 startup systemd -u ec2-user --hp /home/ec2-user
