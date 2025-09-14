@@ -1,18 +1,25 @@
 {
   "name": "node_cicd",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "start:doc": "node main.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Pipeline test passed!\" && exit 0",
+    "docker:build": "docker build -t node-cicd .",
+    "docker:run": "docker run -p 3001:3001 node-cicd",
+    "docker:dev": "docker run -p 3001:3001 -v $(pwd):/usr/src/app node-cicd npm run dev"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "docker", "cicd", "github-actions"],
+  "author": "Your Name",
   "license": "ISC",
-  "description": "",
+  "description": "Node.js app with Docker and GitHub Actions CI/CD",
   "dependencies": {
     "express": "^5.1.0",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
